@@ -1,18 +1,18 @@
-// Exercise 1 - Turn the chapel red.
+// ******************** Exercise 1 - Turn the chapel red ********************
 var img = new SimpleImage("chapel.png");
 for (var pixel of img.values()){
     pixel.setRed(255);
 }
 //print(img);
 
-// Exercise 2 - Remove all the red
+// ******************** Exercise 2 - Remove all the red ********************
 var img = new SimpleImage("chapel.png");
 for (var pixel of img.values()){
     pixel.setRed(0);
 }
 //print(img);
 
-// Exercise 3 - Turn the eggs less red
+// ******************** Exercise 3 - Turn the eggs less red ********************
 var img = new SimpleImage("eastereggs.jpg");
 for(var pixel of img.values()){
     if(pixel.getRed() > 70){
@@ -21,7 +21,7 @@ for(var pixel of img.values()){
 }
 //print(img);
 
-// Exercise 4 - Add Thick Black Line to Bottom of Owen
+// ******************** Exercise 4 - Add Thick Black Line to Bottom of Owen ********************
 var img = new SimpleImage("astrachan.jpg");
 var height = img.getHeight();
 for(var pixel of img.values()){
@@ -33,7 +33,7 @@ for(var pixel of img.values()){
 }
 //print(img);
 
-// Exercise 5 - Green square in top left corner
+// ******************** Exercise 5 - Green square in top left corner ********************
 var img = new SimpleImage("chapel.png");
 for(var pixel of img.values()){
     if(pixel.getX() < 50 && pixel.getY() < 50){
@@ -44,7 +44,7 @@ for(var pixel of img.values()){
 }
 //print(img);
 
-// Exercise 6 - Rectangle of any color in top right corner
+// ******************** Exercise 6 - Rectangle of any color in top right corner ********************
 function topRightCorner(cornerWidth, cornerHeight, someImage, red, green, blue){
     var height = someImage.getHeight();
     var width = someImage.getWidth();
@@ -66,7 +66,7 @@ var result2 = topRightCorner(125, 20, picture2, 255, 0, 0);
 print(result2);
 */
 
-// Exercise 7 - Changes in Red
+// ******************** Exercise 7 - Changes in Red ********************
 function changeRed(width, height){
     var img = new SimpleImage(width, height);
     var r = 0;
@@ -84,7 +84,7 @@ var result = changeRed(256,200);
 print(result);
 */
 
-// OPTIONAL: ONE CHANGE
+// ******************** OPTIONAL: ONE CHANGE ********************
 function changeRed(width, height, green, blue){
     var img = new SimpleImage(width, height);
     var r = 0;
