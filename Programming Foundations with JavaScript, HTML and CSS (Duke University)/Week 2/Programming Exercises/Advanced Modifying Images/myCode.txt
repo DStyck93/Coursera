@@ -1,0 +1,134 @@
+/*
+---------------------------------------- Part 1 ----------------------------------------
+Write the green screen algorithm you saw in the lecture video yourself.
+*/
+
+// Initialize images
+var bgImage = new SimpleImage("dinos.png");
+var fgImage = new SimpleImage("drewRobert.png");
+var output = new SimpleImage(bgImage.getWidth(), bgImage.getHeight());
+
+// For each "green" pixel in the foreground image, replace with background
+for (var pixel of fgImage.values()){
+    var x  = pixel.getX();
+    var y = pixel.getY();
+    if(pixel.getGreen() > 200 && pixel.getBlue() < 50 && pixel.getRed() < 50){
+        output.setPixel(x, y, bgImage.getPixel(x, y));
+    }
+    else{
+        output.setPixel(x, y, pixel);
+    }
+}
+
+// Test
+//print(output);
+
+/*
+---------------------------------------- Part 2 ----------------------------------------
+Your friend is trying to write a program that draws a square 200 pixels by 200 pixels.
+red = 255, 0, 0
+green = 0, 255, 0
+blue value = 0, 0, 255
+magenta = 255, 0, 255
+
+Your friend has written code to try to solve this problem, however their code has a bug.
+Here is their code:
+
+var img = new SimpleImage(200,200);
+for (var px of img.values()){
+  var x = px.getX();
+  var y = px.getY();
+  if (x < img.getWidth()/2){
+    px.setRed(255);
+  }
+  if (y>img.getHeight()/2){
+    px.setBlue(255);
+  }
+  else {
+    px.setGreen(255);
+  }
+}
+print (img);
+
+Your task is to find and fix the bug.
+*/
+
+// Create 200x200 image
+var img = new SimpleImage(200,200);
+
+// Loop through each pixel in the image
+for (var px of img.values()){
+    
+    // Get X/Y coordinates
+    var x = px.getX();
+    var y = px.getY();
+    
+    // If x < 1/2 of the images width -> Set the pixel to red
+    if (x < img.getWidth()/2){
+        px.setRed(255);
+    }
+    
+    // If Y > 1/2 the images height -> Set the pixel to blue
+    if (y > img.getHeight()/2){
+        px.setBlue(255);
+    }
+    
+    // If neither statement is true -> Set the pixel to green
+    if (x >= img.getWidth()/2 && y <= img.getHeight()/2) {
+        px.setGreen(255);
+    }
+}
+
+// Test
+//print (img);
+
+/*
+---------------------------------------- Part 3 ----------------------------------------
+Write a function named setBlack that has one parameter pixel (representing a single pixel) and returns pixel with its red, green, and blue
+components changed so that the pixel’s color is black.
+*/
+function setBlack(pixel){
+    pixel.setRed(0);
+    pixel.setGreen(0);
+    pixel.setBlue(0);
+    return pixel;
+}
+// Test
+/*
+var img = new SimpleImage(200, 200);
+for(var pixel of img.values()){
+    pixel = setBlack(pixel);
+}
+print(img);
+*/
+
+/*
+Now you will write another function named addBorder. This function will add a black border to an image.
+Takes 2 parameters: the image to edit & the border thickness.
+Does NOT change the size of the original image
+*/
+function addBorder(img, thickness){
+    
+    // Loop through each pixel in the image
+    for(var pixel of img.values()){
+        
+        // Get x/y values
+        var x = pixel.getX();
+        var y = pixel.getY();
+        
+        // If pixel should be part of the border
+        if(y < thickness || y > img.getHeight() - thickness || x < thickness || x > img.getWidth() - thickness){
+            // Make pixel black
+            pixel = setBlack(pixel);
+        }
+    }
+    
+    return img;
+}
+
+// Test
+/*
+var img = new SimpleImage("chapel.png");
+img = addBorder(img, 10);
+print(img);
+*/
