@@ -1,0 +1,23 @@
+h1 {
+  font-family: "Times New Roman", serif;
+  text-align: center;
+  text-decoration-line: underline;
+}
+
+.div1 {
+  background-color: lightblue;
+  font-family: "Courier New", monospace;
+  padding: 2px;
+  width: 170px;
+  margin: auto;
+  text-align: center;
+}
+
+.div2 {
+  background-color: yellow;
+  font-family: "Lucida Handwriting", cursive;
+  padding: 2px;
+  width: 170px;
+  text-align: center;
+  margin: auto;
+}
