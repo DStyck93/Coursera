@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Inputs and Events</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h1>Inputs and Events</h1>
+
+<canvas id="canvas"></canvas></br>
+
+<input type="button" value="Make Black" onclick="makeBlack()"><br>
+
+<p>
+  Change Color:
+<input type="color" value="lightblue" id="color" onchange="changeColor()"><br>
+
+<p>
+  Make Square:
+  <input type="range" min="1" max="100" value="1" id="slider" oninput="doSquare()">
+</p>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
