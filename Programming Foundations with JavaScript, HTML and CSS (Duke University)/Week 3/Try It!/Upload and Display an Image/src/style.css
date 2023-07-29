@@ -5,9 +5,8 @@ h1 {
 
 #canvas {
   border-style: solid;
-  border-color: grey;
+  border-color: lightgrey;
   border-width: 1px;
   margin-bottom: 10px;
-  width: 640px;
-  height: 360px;
+  height: 300px;
 }
