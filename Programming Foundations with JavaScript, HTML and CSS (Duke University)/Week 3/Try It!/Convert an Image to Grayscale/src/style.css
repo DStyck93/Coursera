@@ -1,0 +1,21 @@
+h1 {
+  font-family: Times, serif;
+  margin-bottom: 20px;
+}
+
+#canvas {
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  margin-bottom: 10px;
+  height: 300px;
+}
+
+#canvas2 {
+  border-style: solid;
+  border-color: lightgray;
+  border-width: 1px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  height: 300px;
+}
